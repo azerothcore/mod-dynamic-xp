@@ -18,7 +18,7 @@ public:
 
     void OnLogin(Player* player) override
     {
-        if (sConfigMgr->GetBoolDefault("Dynamic.XP.Rate.Announce", true))
+        if (sConfigMgr->GetOption<bool>("Dynamic.XP.Rate.Announce", true))
         {
             ChatHandler(player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Level Dynamic XP |rmodule.");
         }
@@ -26,7 +26,7 @@ public:
 
     void OnGivePlayerXP(Player* player, uint32& amount, Unit* /*victim*/)
     {
-        if (sConfigMgr->GetBoolDefault("Dynamic.XP.Rate", true))
+        if (sConfigMgr->GetOption<bool>("Dynamic.XP.Rate", true))
         {
             if (player->getLevel() <= 9)
                 amount *= sConfigMgr->GetIntDefault("Dynamic.XP.Rate.1-9", 1);
