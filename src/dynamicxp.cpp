@@ -29,21 +29,21 @@ public:
         if (sConfigMgr->GetOption<bool>("Dynamic.XP.Rate", true))
         {
             if (player->getLevel() <= 9)
-                amount *= sConfigMgr->GetIntDefault("Dynamic.XP.Rate.1-9", 1);
+                amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.1-9", 1);
             else if (player->getLevel() <= 19)
-                amount *= sConfigMgr->GetIntDefault("Dynamic.XP.Rate.10-19", 2);
+                amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.10-19", 2);
             else if (player->getLevel() <= 29)
-                amount *= sConfigMgr->GetIntDefault("Dynamic.XP.Rate.20-29", 3);
+                amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.20-29", 3);
             else if (player->getLevel() <= 39)
-                amount *= sConfigMgr->GetIntDefault("Dynamic.XP.Rate.30-39", 4);
+                amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.30-39", 4);
             else if (player->getLevel() <= 49)
-                amount *= sConfigMgr->GetIntDefault("Dynamic.XP.Rate.40-49", 5);
+                amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.40-49", 5);
             else if (player->getLevel() <= 59)
-                amount *= sConfigMgr->GetIntDefault("Dynamic.XP.Rate.50-59", 6);
+                amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.50-59", 6);
             else if (player->getLevel() <= 69)
-                amount *= sConfigMgr->GetIntDefault("Dynamic.XP.Rate.60-69", 7);
+                amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.60-69", 7);
             else if (player->getLevel() <= 79)
-                amount *= sConfigMgr->GetIntDefault("Dynamic.XP.Rate.70-79", 8);
+                amount *= sConfigMgr->GetOption<uint32>("Dynamic.XP.Rate.70-79", 8);
         }
     }
 };
