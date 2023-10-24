@@ -13,6 +13,7 @@
 #        Dynamic.XP.Rate.X-X: 1+ (Set a custom XP rate on that level range)
 #                             0  (Reset custom XP rate to default on that level range)
 #
+
 Dynamic.XP.Rate.Announce = 1
 
 Dynamic.XP.Rate = 1
@@ -25,4 +26,5 @@ Dynamic.XP.Rate.40-49 = 5
 Dynamic.XP.Rate.50-59 = 6
 Dynamic.XP.Rate.60-69 = 7
 Dynamic.XP.Rate.70-79 = 8
+
 ##################################################################################################################
