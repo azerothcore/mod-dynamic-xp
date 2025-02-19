@@ -16,7 +16,7 @@ class spp_dynamic_xp_rate : public PlayerScript
 public:
     spp_dynamic_xp_rate() : PlayerScript("spp_dynamic_xp_rate") { };
 
-    void OnLogin(Player* player) override
+    void OnPlayerLogin(Player* player) override
     {
         if (sConfigMgr->GetOption<bool>("Dynamic.XP.Rate.Announce", true))
         {
@@ -24,7 +24,7 @@ public:
         }
     }
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* /*victim*/, uint8 /*xpSource*/) override
+    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* /*victim*/, uint8 /*xpSource*/) override
     {
         if (sConfigMgr->GetOption<bool>("Dynamic.XP.Rate", true))
         {
