@@ -5,23 +5,23 @@ Module Created by Micrah/Milestorme
 Original Script from AshmaneCore https://github.com/conan513 Single Player Project
 */
 
-#include "Configuration/Config.h"
-#include "ScriptMgr.h"
-#include "Player.h"
 #include "Chat.h"
-
+#include "Configuration/Config.h"
+#include "Player.h"
+#include "ScriptMgr.h"
 
 class spp_dynamic_xp_rate : public PlayerScript
 {
 public:
-    spp_dynamic_xp_rate() : PlayerScript("spp_dynamic_xp_rate") { };
+    spp_dynamic_xp_rate() : PlayerScript("spp_dynamic_xp_rate", {
+        PLAYERHOOK_ON_LOGIN,
+        PLAYERHOOK_ON_GIVE_EXP
+    }) { };
 
     void OnPlayerLogin(Player* player) override
     {
         if (sConfigMgr->GetOption<bool>("Dynamic.XP.Rate.Announce", true))
-        {
             ChatHandler(player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Level Dynamic XP |rmodule.");
-        }
     }
 
     void OnPlayerGiveXP(Player* player, uint32& amount, Unit* /*victim*/, uint8 /*xpSource*/) override
